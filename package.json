@@ -2,7 +2,7 @@
   "name": "antd-input-mask",
   "version": "1.0.0",
   "description": "Input Mask for Ant Design",
-  "author": "Aluisio Amorim - bemtevi",
+  "author": "Aluisio Amorim - bem.te.vi",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
