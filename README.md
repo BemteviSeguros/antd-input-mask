@@ -24,7 +24,7 @@ A Masked Input Component based on [Ant Design](https://ant.design/docs/react/int
 <!-- @TODO -->
 
 ## Developed by
-bem-te-vi -> [GitHub](https://github.com/BemteviSeguros) / [Linkedin](https://www.linkedin.com/company/bemtevi-seguros/mycompany/) <br/>
+bem-te-vi -> [GitHub](https://github.com/BemteviSeguros) / [Linkedin](https://www.linkedin.com/company/bemtevi-seguros/) <br/>
 Aluisio Amorim -> [GitHub](https://github.com/Amorim33) / [Twitter](https://twitter.com/AluisioDev) / [Linkedin](https://www.linkedin.com/in/aluisio-amorim-b19a701ba/?locale=en_US)
 
 ## Links
