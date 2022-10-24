@@ -1,32 +1,41 @@
-// https://www.codefeetime.com/post/rollup-config-for-react-component-library-with-typescript-scss/
-
+// https://dev.to/siddharthvenkatesh/component-library-setup-with-react-typescript-and-rollup-onj
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
-
+import external from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
-import { getFiles } from "./scripts/buildUtils.js";
+import dts from "rollup-plugin-dts";
+import packageJson from "./package.json";
 
-const extensions = [".js", ".ts", ".jsx", ".tsx"];
-
-export default {
-  input: ["./src/index.ts", ...getFiles("./src/components", extensions)],
-  output: {
-    dir: "dist",
-    format: "esm",
-    preserveModules: true,
-    preserveModulesRoot: "src",
-    sourcemap: true,
+export default [
+  {
+    input: "./src/index.ts",
+    output: [
+      {
+        file: packageJson.main,
+        format: "cjs",
+        sourcemap: true,
+        name: "react-lib",
+      },
+      {
+        file: packageJson.module,
+        format: "esm",
+        sourcemap: true,
+      },
+    ],
+    plugins: [
+      external(),
+      resolve(),
+      commonjs(),
+      typescript({ tsconfig: "./tsconfig.json" }),
+      postcss(),
+    ],
+    external: ["react", "react-dom"],
   },
-  plugins: [
-    resolve(),
-    commonjs(),
-    typescript({
-      tsconfig: "./tsconfig.build.json",
-      declaration: true,
-      declarationDir: "dist",
-    }),
-    postcss(),
-  ],
-  external: ["react", "react-dom"],
-};
+  {
+    input: "dist/esm/index.d.ts",
+    output: [{ file: "dist/index.d.ts", format: "esm" }],
+    external: [/\.css$/],
+    plugins: [dts()],
+  },
+];

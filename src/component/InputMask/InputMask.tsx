@@ -1,22 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Input, InputProps } from "antd";
+import React, { useEffect, useState, FC } from "react";
+import { Input } from "antd";
 
-export interface IInitalValue {
-  value: string | number;
-  normalize?: (value: string) => string;
-}
+import { InputMaskProps } from "./InputMask.types";
 
-export interface InputMaskProps extends InputProps {
-  setMaskedFieldValue?: (value: string) => void;
-  setFieldValue?: (value: string) => void;
-  mask: string;
-  rightToLeft?: boolean;
-  prefix?: string;
-  initialValue?: IInitalValue;
-  onlyNumbers?: boolean;
-}
-
-const InputMask = (props: InputMaskProps) => {
+const InputMask: FC<InputMaskProps> = (props) => {
   const {
     mask,
     rightToLeft,

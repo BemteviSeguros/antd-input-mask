@@ -1,33 +1,21 @@
 {
   "compilerOptions": {
+    "target": "es2015",
     "module": "esnext",
-    "target": "es5",
-    "lib": ["es6", "dom"],
-    "sourceMap": true,
     "jsx": "react",
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
     "moduleResolution": "node",
-    "rootDir": "src",
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "baseUrl": "src/",
-    "paths": {
-      "common": ["src/common/*"],
-      "components": ["src/components/*"],
-      "hooks": ["src/hooks/*"],
-      "utils": ["src/utils/*"]
-    }
-  },
-  "exclude": [
-    "node_modules",
-    "build",
-    "dist",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest"
-  ],
-  "types": ["typePatches"]
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "declaration": true,
+    "declarationDir": "types",
+    "emitDeclarationOnly": true,
+    "allowJs": true,
+    "declarationMap": true
+  }
 }
