@@ -4,7 +4,6 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 
-import postcss from "rollup-plugin-postcss";
 import { getFiles } from "./scripts/buildUtils.js";
 
 const extensions = [".js", ".ts", ".jsx", ".tsx"];
@@ -26,7 +25,6 @@ export default {
       declaration: true,
       declarationDir: "dist",
     }),
-    postcss(),
   ],
   external: ["react", "react-dom"],
 };
