@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`correctly renders 1`] = `
+<div>
+  <input
+    class="ant-input"
+    type="text"
+    value=""
+  />
+</div>
+`;
